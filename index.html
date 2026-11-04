@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support · Startup Tycoon: Garaj</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#bfe3ff;--card:#fff;--ink:#1f2a44;--body:#3d4a66;--muted:#6b7894;--accent:#ff9f1c;--line:#1f2a44}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--body);font:16px/1.6 "Nunito",system-ui,sans-serif}
+main{max-width:720px;margin:0 auto;padding:24px 16px 64px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.brand{font-family:"Lilita One",system-ui,sans-serif;font-size:22px;color:var(--ink);text-decoration:none}
+.langs button{font:800 14px "Nunito",sans-serif;border:2px solid var(--line);border-bottom-width:4px;border-radius:12px;background:#fff;color:var(--ink);padding:6px 12px;cursor:pointer;margin-left:6px}
+.langs button[aria-pressed=true]{background:var(--accent);color:#fff}
+.card{background:var(--card);border:3px solid var(--line);border-bottom-width:7px;border-radius:20px;padding:24px;margin-bottom:16px}
+h1{font-family:"Lilita One",system-ui,sans-serif;font-weight:400;color:var(--ink);font-size:32px;margin:0 0 4px}
+h2{font-weight:800;color:var(--ink);font-size:18px;margin:24px 0 4px}
+.muted{color:var(--muted);font-size:14px}
+a{color:#2b6fd6}
+nav a{margin-right:16px;font-weight:800}
+[data-lang]{display:none}
+html[lang=tr] [data-lang=tr],html[lang=en] [data-lang=en]{display:block}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <a class="brand" href="index.html">Startup Tycoon: Garaj</a>
+  <div class="langs"><button data-set="tr">TR</button><button data-set="en">EN</button></div>
+</header>
+<section data-lang="tr" class="card"><h1>Destek</h1><p>Startup Tycoon: Garaj ile ilgili bir sorun, öneri ya da &quot;bu kart neden böyle?&quot; sorusu mu var? Yaz, okuyoruz.</p><h2>İletişim</h2><p><a href="mailto:vexorabyte@gmail.com">vexorabyte@gmail.com</a></p><h2>Kaydım kayboldu mu?</h2><p>Oyun kaydın telefonunda saklanır. Uygulamayı silmediğin sürece ilerlemen kalır. Ayarlar&#x27;daki &quot;Yeni oyun&quot; her şeyi sıfırlar (satın alımlar hariç).</p><h2>Satın alımımı geri yüklemek istiyorum.</h2><p>Satın alımlar App Store hesabına bağlıdır. Aynı Apple kimliğiyle giriş yapıp oyunu yeniden açman yeterli; olmazsa bize yaz.</p><h2>Enerjim neden yavaş doluyor?</h2><p>Enerji gerçek zamanla dolar: sıfırdan tama yaklaşık yarım saat. Kahve makinesi ve rahat bir ofis dolumu hızlandırır; istersen ödüllü reklamla anında doldurabilirsin.</p><h2>Bildirimleri nasıl kapatırım?</h2><p>Oyun içinde Ayarlar → Hatırlatmalar&#x27;dan ya da iPhone Ayarlar → Bildirimler&#x27;den.</p><nav><a href="privacy.html">Gizlilik politikası</a></nav></section>
+<section data-lang="en" class="card"><h1>Support</h1><p>Found a bug, have an idea, or wondering why a card did that? Write to us, we read everything.</p><h2>Contact</h2><p><a href="mailto:vexorabyte@gmail.com">vexorabyte@gmail.com</a></p><h2>Did I lose my save?</h2><p>Your save lives on your phone. As long as you don&#x27;t delete the app, your progress stays. &quot;Start a new game&quot; in Settings resets everything except purchases.</p><h2>How do I restore a purchase?</h2><p>Purchases are tied to your App Store account. Sign in with the same Apple ID and reopen the game; if that doesn&#x27;t work, write to us.</p><h2>Why does energy refill slowly?</h2><p>Energy refills in real time: about half an hour from empty to full. A coffee machine and a cozy office speed it up, or you can refill instantly with a rewarded ad.</p><h2>How do I turn off notifications?</h2><p>In the game: Settings → Reminders, or in iPhone Settings → Notifications.</p><nav><a href="privacy.html">Privacy policy</a></nav></section>
+</main>
+
+<script>
+(function(){
+  var saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
+  var lang=saved||((navigator.language||'en').toLowerCase().indexOf('tr')===0?'tr':'en');
+  function set(l){document.documentElement.lang=l;document.querySelectorAll('.langs button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l)});try{localStorage.setItem('lang',l)}catch(e){}}
+  document.querySelectorAll('.langs button').forEach(function(b){b.onclick=function(){set(b.dataset.set)}});
+  set(lang);
+})();
+</script>
+
+</body>
+</html>
